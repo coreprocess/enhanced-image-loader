@@ -1,15 +1,13 @@
-# image size loader for webpack
+# enhanced image loader for webpack
 
-A webpack image loader with extra size info for image.
+A webpack image loader with enhanced info for image.
 
 ## Usage
 
-[Documentation: Using loaders](http://webpack.github.io/docs/using-loaders.html)
-
 ``` javascript
-npm install image-size-loader --save
+npm install enhanced-image-loader --save
 
-var image = require("image-size!./file.png");
+var image = require("enhanced-image-loader!./file.png");
 // => emits file.png to the output directory
 // => returns an object
 // => { width: 150, height: 50, type: "png", src: __webpack_public_path__ + "file.png", bytes: 1234 }
@@ -22,7 +20,7 @@ var image = require("image-size!./file.png");
 #### name
 
 ```js
-var image = require('image-size?name=[hash].[ext]!./file.png');
+var image = require('enhanced-image-loader?name=[hash].[ext]!./file.png');
 ```
 
 ### Filename placeholders
@@ -50,7 +48,7 @@ module.exports = {
     publicPath: '/public/'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.(gif|jpeg|jpg|png|svg)$/,
         loader: 'image-size'
